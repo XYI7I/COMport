@@ -1,0 +1,6 @@
+**/.idea/
+**/venv/
+**/.venv/
+**/serial-terminal-main/
+**/PuTTY/
+/Terminal.exe

@@ -1,0 +1,24 @@
+program ScriptTest;
+
+const STRING1 = 'first test';
+
+var i: longint;
+begin
+  writeln(STRING1);
+  comsendstr(STRING1);
+  while not(i=27) do // wait for ESC char
+  begin
+    i:=0;
+    while i=0 do i:=ComReadChr();
+      if (i=ord('1')) then writeln('Test 1...');
+      if (i=ord('2')) then writeln('Test 2...');
+      if (i=ord('3')) then writeln('Test 3...');
+  end;
+  writeln('while loop exit');
+  
+  // send alphabet
+  for i:=65 to 90 do
+  begin
+    comsendchr(i);
+  end;
+end.
