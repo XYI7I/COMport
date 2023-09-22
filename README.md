@@ -1,4 +1,4 @@
-# ![LaserCOM](https://upload.wikimedia.org/wikipedia/commons/9/94/Laser-symbol.svg =50x50)
+#<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Laser-symbol.svg" alt= “LaserCOM” width="50px"> 
 Laser 150806-YLP-E RS-232
  
 
