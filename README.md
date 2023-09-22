@@ -1,7 +1,7 @@
-# [![LaserCOM](https://upload.wikimedia.org/wikipedia/commons/9/94/Laser-symbol.svg =50x)]
-Laser 150806-YLP-E RS-232 
+# [![LaserCOM](https://upload.wikimedia.org/wikipedia/commons/9/94/Laser-symbol.svg =50x)Laser 150806-YLP-E RS-232]
+ 
 
-### AI - Факультет Искусственного интеллекта
+### Программа для работы с лазером по RS-232
 
 * [Python](https://github.com/XYI7I/COMport/tree/main/RS-232)<br>
 * [LabVIEW](https://github.com/XYI7I/COMport/tree/main/LaserCOM)<br>
