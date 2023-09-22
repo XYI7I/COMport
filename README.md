@@ -1,4 +1,5 @@
-# ![Laser 150806-YLP-E RS-232](https://upload.wikimedia.org/wikipedia/commons/9/94/Laser-symbol.svg)
+# ![LaserCOM](https://upload.wikimedia.org/wikipedia/commons/9/94/Laser-symbol.svg =50x50)
+Laser 150806-YLP-E RS-232
  
 
 ### Программа для работы с лазером по RS-232
