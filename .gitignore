@@ -3,4 +3,5 @@
 **/.venv/
 **/serial-terminal-main/
 **/PuTTY/
+**/LaserCOM_win/
 /Terminal.exe
