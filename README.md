@@ -6,4 +6,4 @@
 * [Python](https://github.com/XYI7I/COMport/tree/main/RS-232)<br>
 * [LabVIEW](https://github.com/XYI7I/COMport/tree/main/LaserCOM)<br>
 * [Библиотеки](https://github.com/XYI7I/COMport/tree/main/Libraries)
-* [Manual](https://github.com/XYI7I/COMport/blob/main/150806-YLP%20series%20interface%20specification%20type%20E.PDF)
+* [Manual](https://github.com/XYI7I/COMport/tree/main/Manual)
