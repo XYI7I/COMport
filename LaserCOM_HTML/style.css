@@ -1,0 +1,190 @@
+body {
+    /*margin: 11%;*/
+    padding: 7%;
+    /*scale: calc();*/
+}
+
+/* Основной контейнер */
+.slider-container {
+    display: flex;
+    align-items: center; /* Центрирует элементы по вертикали */
+    gap: 10px; /* Расстояние между элементами */
+}
+
+* {
+    /*background-color: #303030;*/
+    background-color: #00192a;
+    font-family: monospace;
+    color: rgb(60, 255, 1);
+    padding: 0;
+}
+
+button,
+datalist {
+    background-color: rgb(85, 85, 85);
+}
+
+input[type=text] {
+    color: rgb(179, 255, 179);
+    background-color: rgb(106, 106, 106);
+    border: 1px solid;
+    border-color: #696 #363 #363 #696;
+}
+
+[type="checkbox"] {
+    vertical-align: middle;
+}
+
+#serialResults {
+    font-family: monospace;
+    white-space: pre;
+    /*height: calc(100% - 120px);*/
+    /*width: calc(100% - 20px);*/
+    width:340px;
+    border-style: solid;
+    /*overflow: scroll;*/
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    margin: 0;
+}
+
+/* Стили для кнопки-переключателя и индикатора */
+.switch {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Цвет кнопки по умолчанию */
+.status-off {
+    color: #008700;
+}
+
+/* Цвет кнопки, когда она активна */
+.status-on {
+    color: #02fd02;
+}
+.adv-panel {
+    background-color: #00192a;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    padding: 7px;
+    border: 1px solid #ccc;
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+}
+.led-panel {
+    display: flex;
+    gap: 10px;
+}
+.led {
+    width: 17px;
+    height: 17px;
+    margin-left: 8px;
+    border-radius: 50%;
+    background-color: #3c0000; /* По умолчанию - отключено (красный) */
+    text-align: center;
+    font-size: 13px;
+    /*text-align: center;*/
+    justify-content: center;
+    align-items: center;
+    color: #989e00;
+}
+.led.on {
+    background-color: red; /* По умолчанию - отключено (красный) */
+    color: #f5fd03;
+}
+.led_ready {
+    width: 17px;
+    height: 17px;
+    margin-left: 8px;
+    border-radius: 50%;
+    background-color: #003000; /* По умолчанию - отключено (красный) */
+    text-align: center;
+    font-size: 13px;
+    /*text-align: center;*/
+    justify-content: center;
+    align-items: center;
+    color: #989e00;
+}
+.led_ready.on {
+    background-color: #02fd02; /* По умолчанию - отключено (красный) */
+    color: #f5fd03;
+}
+.led_ready.alarm {
+    background-color: red; /* По умолчанию - отключено (красный) */
+    color: #f5fd03;
+}
+/*.led_attention {*/
+/*    width: 17px;*/
+/*    height: 17px;*/
+/*    margin-left: 8px;*/
+/*    border-radius: 50%;*/
+/*    background-color: #7d8300; !* По умолчанию - отключено (красный) *!*/
+/*    text-align: center;*/
+/*    font-size: 13px;*/
+/*    !*text-align: center;*!*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    color: #3c0000;*/
+/*}*/
+/*led_attention.on {*/
+/*    background-color: #f5fd03; !* По умолчанию - отключено (красный) *!*/
+/*    color: #3c0000;*/
+/*}*/
+.led_laser {
+    width: 27px;
+    height: 8px;
+    margin-left: 8px;
+    border-radius: 2px;
+    /*border-radius: 50%;*/
+    background-color: #3c0000; /* По умолчанию - отключено (красный) */
+}
+.led_laser.on {
+    background-color: #ff0000; /* При подключении - зеленый */
+}
+.led_com {
+    width: 27px;
+    height: 8px;
+    margin-left: 8px;
+    border-radius: 2px;
+    background-color: #003000; /* По умолчанию - отключено (красный) */
+}
+.led_com.on {
+    background-color: #00ff00; /* При подключении - зеленый */
+}
+.led_RS232 {
+    width: 27px;
+    height: 8px;
+    margin-left: 8px;
+    border-radius: 2px;
+    background-color: #7d8300; /* По умолчанию - отключено (красный) */
+}
+.led_RS232.on {
+    background-color: #f5fd03; /* При подключении - зеленый */
+}
+.ledDB25 {
+    width: 17px;
+    height: 17px;
+    margin-left: 8px;
+    border-radius: 50%;
+    background-color: #606300; /* По умолчанию - отключено (красный) */
+    text-align: center;
+    font-size: 13px;
+    /*text-align: center;*/
+    justify-content: center;
+    align-items: center;
+    color: #003000;
+}
+.ledDB25.on {
+    background-color: #f5fd03; /* По умолчанию - отключено (красный) */
+    color: #003000;
+}
+/* Стили для ползунка */
+.slider {
+    width: 100%;
+    max-width: 320px;
+}
