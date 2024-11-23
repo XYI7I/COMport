@@ -9,7 +9,7 @@
 /Terminal.exe
 
 **/manual/
-**/img/
+#**/img/
 *.gitignore
 *package.json
 *package-lock.json
