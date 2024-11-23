@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.5">
-        <title>Laser YL(X)-Series COM-port</title>
+        <title>Laser YLP[X]-Series Software</title>
         <link rel="icon" href="img/icon.png" type="image/x-icon">
-        <meta name="Description" content="">
+        <meta name="Description" content="Laser YLP[X]-Series COM-port Control System">
         <link rel="stylesheet" href="style.css">
         <script src="main.js"></script>
         <script src="laser.js"></script>
@@ -18,14 +18,14 @@
         <!-- Кнопка-переключатель с индикатором -->
         <div class="switch" onclick="toggleConnection()">
             <button id="connectButton" title="COM-port Connection">Connect</button>
-            <div id="connectionLed" class="led_com"></div>
+            <div id="connectionLed" class="led_com" title="Conection Led"></div>
         </div>
         <div style="font-size: 7px; color: #008700">model:<span id="model" style="color: #02fd02">-</span>&nbspS/N:<span id="sn">-</span></div>
         <span id="connectionDB25" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: yellow"></span><br>
         <div class="switch" onclick="toggleRS232()">
             Laser Control&nbsp<button id="connectRS232" class="status-off" style="width: 73px" title="Laser Control Interface - RS-232/DB-25">&#128435;</button>
 <!--            &#128377; when DB-25 connected-->
-            <div id="connectionRS232Led" class="led_RS232" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: black">RS-232</div>
+            <div id="connectionRS232Led" class="led_RS232" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: black" title="RS-232 Interface Led">RS-232</div>
 <!--            <div><span id="RS232"></span></div>-->
         </div>
         <br>
@@ -33,13 +33,13 @@
             Laser Guide&nbsp&nbsp&nbsp
 <!--            &#9728; -->
             <button id="guideLaser" class="status-off" style="width: 73px" title="Guide Laser Switch">&#9211;</button>
-            <div id="guideLaserLed" class="led_laser"></div>
+            <div id="guideLaserLed" class="led_laser" title="Guide Laser Led"></div>
         </div>
         <br>
         <div class="switch" onclick="toggleMainLaser()">
             Laser Main&nbsp&nbsp&nbsp&nbsp
             <button id="mainLaser" class="status-off" style="width: 73px" title="Main Laser Switch">&#9211;</button>
-            <div id="mainLaserLed" class="led_laser"></div>
+            <div id="mainLaserLed" class="led_laser" title="Main Laser Led"></div>
         </div>
         <br>
         <br>
@@ -121,7 +121,8 @@
         </div>
         <div class="footer-copyright">
             <div>
-                <a href="https://github.com/XYI7I" target="_blank">GK 7533</a>
+                <a href="https://github.com/XYI7I" target="_blank">GK</a>
+                <a>7533</a>
             </div>
         </div>
     </body>

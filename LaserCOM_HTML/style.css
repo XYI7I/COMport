@@ -195,8 +195,11 @@ input[type=text] {
     width: 73%;
     text-align: right;
     /*padding: 10px;*/
+    color: #006750;
+    font-size: smaller;
 }
 .footer-copyright a {
     text-decoration:none;
     color: #006750;
+    font-size: smaller;
 }
