@@ -85,13 +85,13 @@ input[type=text] {
     height: 17px;
     margin-left: 8px;
     border-radius: 50%;
-    background-color: #3c0000; /* По умолчанию - отключено (красный) */
+    background-color: #230000; /* По умолчанию - отключено (красный) */
     text-align: center;
     font-size: 13px;
     /*text-align: center;*/
     justify-content: center;
     align-items: center;
-    color: #989e00;
+    color: #828700;
 }
 .led.on {
     background-color: red; /* По умолчанию - отключено (красный) */
@@ -108,7 +108,7 @@ input[type=text] {
     /*text-align: center;*/
     justify-content: center;
     align-items: center;
-    color: #989e00;
+    color: #828700;
 }
 .led_ready.on {
     background-color: #02fd02; /* По умолчанию - отключено (красный) */
@@ -141,7 +141,7 @@ input[type=text] {
     margin-left: 8px;
     border-radius: 2px;
     /*border-radius: 50%;*/
-    background-color: #3c0000; /* По умолчанию - отключено (красный) */
+    background-color: #230000; /* По умолчанию - отключено (красный) */
 }
 .led_laser.on {
     background-color: #ff0000; /* При подключении - зеленый */
