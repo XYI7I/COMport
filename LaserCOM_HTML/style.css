@@ -192,7 +192,8 @@ input[type=text] {
     position: fixed;
     bottom: 7px;
     left: 73px;
-    text-align: left;
+    width: 73%;
+    text-align: right;
     /*padding: 10px;*/
 }
 .footer-copyright a {
