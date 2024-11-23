@@ -7,3 +7,13 @@
 **/PuTTY/
 **/LaserCOM_win/
 /Terminal.exe
+
+**/manual/
+**/img/
+*.gitignore
+*package.json
+*package-lock.json
+
+### WebStorm ###
+**/.git/
+**/.idea/
