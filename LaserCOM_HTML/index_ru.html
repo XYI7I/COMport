@@ -12,47 +12,47 @@
         <script src="password.js"></script>
     </head>
     <body>
-        <a id ="manual"><button id ="manualButton" class="active" style="width: 21px; color: #008700" title="Laser Manual">&#128366;</button></a>
-        <button id="settingsButton" class="active" onclick="showPasswordModal()" style="width: 21px; color: #7d8300" title="Advanced Laser Settings">&#9888;</button>
+        <a id ="manual"><button id ="manualButton" class="active" style="width: 21px; color: #008700" title="руководство пользователя">&#128366;</button></a>
+        <button id="settingsButton" class="active" onclick="showPasswordModal()" style="width: 21px; color: #7d8300" title="экспертные настройки">&#9888;</button>
 <!--        &#128712;-->
         <!-- Кнопка-переключатель с индикатором -->
         <div class="switch" onclick="toggleConnection()">
-            <button id="connectButton" title="COM-port Connection">Connect</button>
-            <div id="connectionLed" class="led_com" title="Conection Led"></div>
+            <button id="connectButton" title="выбор COM-port">&nbsp- COM -&nbsp</button>
+            <div id="connectionLed" class="led_com" title="индикатор подключения"></div>
         </div>
-        <div style="font-size: 7px; color: #008700">model:<span id="model" style="color: #02fd02">-</span>&nbspS/N:<span id="sn">-</span></div>
+        <div style="font-size: 7px; color: #008700">модель:<span id="model" style="color: #02fd02">-</span>&nbspS/N:<span id="sn">-</span></div>
         <span id="connectionDB25" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: yellow"></span><br>
         <div class="switch" onclick="toggleRS232()">
-            Laser Control&nbsp<button id="connectRS232" class="status-off" style="width: 73px" title="Laser Control Interface - RS-232/DB-25">&#128435;</button>
+            управление лазером&nbsp<button id="connectRS232" class="status-off" style="width: 73px" title="переключатель интерфейсов - RS-232/DB-25">&#128435;</button>
 <!--            &#128377; when DB-25 connected-->
-            <div id="connectionRS232Led" class="led_RS232" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: black" title="RS-232 Interface Led">RS-232</div>
+            <div id="connectionRS232Led" class="led_RS232" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: black" title="индикатор подключения к лазеру по RS-232">RS-232</div>
 <!--            <div><span id="RS232"></span></div>-->
         </div>
         <br>
         <div class="switch" onclick="toggleGaideLaser()">
-            Laser Guide&nbsp&nbsp&nbsp
+            лазер пилот&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <!--            &#9728; -->
-            <button id="guideLaser" class="status-off" style="width: 73px" title="Guide Laser Switch">&#9211;</button>
-            <div id="guideLaserLed" class="led_laser" title="Guide Laser Led"></div>
+            <button id="guideLaser" class="status-off" style="width: 73px" title="выключатель лазер-пилота">&#9211;</button>
+            <div id="guideLaserLed" class="led_laser" title="индикатор лазер-пилота"></div>
         </div>
         <br>
         <div class="switch" onclick="toggleMainLaser()">
-            Laser Main&nbsp&nbsp&nbsp&nbsp
-            <button id="mainLaser" class="status-off" style="width: 73px" title="Main Laser Switch">&#9211;</button>
-            <div id="mainLaserLed" class="led_laser" title="Main Laser Led"></div>
+            лазер основной&nbsp&nbsp&nbsp&nbsp&nbsp
+            <button id="mainLaser" class="status-off" style="width: 73px" title="выключатель излучения лазера">&#9211;</button>
+            <div id="mainLaserLed" class="led_laser" title="индикатор излучения лазера"></div>
         </div>
         <br><br><br>
         <div class="led-panel">
             <label for="powerSlider"></label>
-            <div id="led8" class="led" title="Temperature alarm">&#127777;</div>
-            <div id="led9" class="led" title="Power supply alarm">U</div>
-            <div id="led10" class="led" title="Back reflection alarm">B</div>
-            <div id="led11" class="led" title="System alarm">E</div>
-            <div id="led12" class="led_ready" title="Ready">R</div>
+            <div id="led8" class="led" title="предупреждение о высокой температуре">&#127777;</div>
+            <div id="led9" class="led" title="предупреждение о неисправности в источнике питания">U</div>
+            <div id="led10" class="led" title="предупреждение об отражении">B</div>
+            <div id="led11" class="led" title="предупреждение о системной ошибке">E</div>
+            <div id="led12" class="led_ready" title="готовность">R</div>
         </div>
         <br>
         <div id="controlDB25" style="display: none;">
-            <label>DB25 Power:</label>&nbsp<span id="DB25PowerStr">--</span>&nbsp%;&nbspFrequency:&nbsp<span id="DB25FreqStr">--</span>&nbspKHz
+            <label>DB25 мощность:</label>&nbsp<span id="DB25PowerStr">--</span>&nbsp%;&nbspчастота:&nbsp<span id="DB25FreqStr">--</span>&nbspKHz
             <br>
             <br>
             <div class="led-panel">
@@ -78,29 +78,29 @@
         </div>
         <div id="advancedLaserMode" style="display: none;">
             <div class="adv-panel">
-                Advansed Laser Settings<button onclick="closeAdvancedLaserMode()" style="position: absolute; top: 10px; right: 10px;">&#9746;</button>
+                 ЭКСПЕРТНЫЕ УСТАНОВКИ<button onclick="closeAdvancedLaserMode()" style="position: absolute; top: 10px; right: 10px;">&#9746;</button>
                 <br><br>
-                <label for="powerSlider">Set Pulse Power [%]:</label>
+                <label for="powerSlider">мощность импульса [%]:</label>
                 <div class="slider-container">
                     <input type="range" id="powerSlider" class="slider" min="0" max="100" step="1" value="10" oninput="document.getElementById('powerValue').textContent = this.value"
                            onchange="updatePowValue(this.value)">
                     <span id="powerValue">10</span>%
                 </div>
                 <br>
-                <label for="frequencySlider">Set Frequency PRR [KHz]:</label>
+                <label for="frequencySlider">частота PRR [KHz]:</label>
                 <div class="slider-container">
                     <input type="range" id="frequencySlider" class="slider" min="50" max="1000" step="10" value="" oninput="document.getElementById('frequencyValue').textContent = this.value"
                            onchange="updateFreqValue(this.value)">
                     <span id="frequencyValue"></span>KHz
                 </div>
                 <br>
-                <label id="pulse_duration_label" for="pulse_duration" style="display: inline-block;">Set Pulse Duration, [ns]:</label>
+                <label id="pulse_duration_label" for="pulse_duration" style="display: inline-block;">длительность импульса, [ns]:</label>
                 <input type="text" id="pulse_duration" list="pulse_durationList" style="width: 10ch;  display: inline-block;" value="-" onclick="this.value = ''"
                        onchange="setPulseDurationValue(this.value)">
                 <datalist id="pulse_durationList">
                 </datalist>
                 <br><br>
-                Laser Comand Terminal:
+                командная строка:
                 <div style="width:360px"><hr color="green"></div>
                 <input type="text" id="lineToSend" style="width:273px" onkeydown="if (event.key === 'Enter') sendSerialLine();">
                 <button onclick="sendSerialLine()" style="width:73px">Send</button>
