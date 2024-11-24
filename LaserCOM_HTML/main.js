@@ -133,7 +133,9 @@ async function disconnectSerial() {
                     document.getElementById("connectRS232").classList.remove("status-on");
                     document.getElementById("connectRS232").classList.add("status-off");
                     isConnected = false;
-                    document.getElementById("connectButton").textContent = "Connect";
+                    document.getElementById("connectButton").classList.remove("active");
+                    document.getElementById("connectButton").classList.add("not-active");
+                    // document.getElementById("connectButton").textContent = "Connect";
                     document.getElementById("connectionLed").classList.remove("on");
                     document.getElementById("model").textContent = "-";
                     document.getElementById("sn").textContent = "-";

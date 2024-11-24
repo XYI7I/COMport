@@ -43,9 +43,11 @@ async function modelLaser() {
             const parts = value.split(";");
             model = parts[1].trim();
             document.getElementById("model").textContent = model;
+            document.getElementById("connectButton").classList.remove("not-active");
+            document.getElementById("connectButton").classList.add("active");
             document.getElementById("settingsButton").classList.remove("not-active");
             document.getElementById("settingsButton").classList.add("active");
-            document.getElementById("connectButton").textContent = "Disconnect";
+            // document.getElementById("connectButton").textContent = "Disconnect";
             document.getElementById("connectionLed").classList.add("on");
             console.log(model);
             document.getElementById("manual").href = "manual/" + model + ".pdf";

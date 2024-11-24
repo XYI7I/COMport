@@ -14,14 +14,14 @@
     <body>
         <a id ="manual">
             <button style="width: 21px; color: #008700" title="руководство пользователя">
-                <svg id ="manualButton" class="n0t-active" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" style="background-color: #555555FF;">
+                <svg id ="manualButton" class="n0t-active" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" style="background-color: #555555FF;">
                     <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
                     <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
                 </svg>
             </button>
         </a>
         <button onclick="showPasswordModal()" style="width: 21px; color: #7d8300" title="экспертные настройки">
-            <svg id="settingsButton" class="not-active" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" style="background-color: #555555FF;">
+            <svg id="settingsButton" class="not-active" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" style="background-color: #555555FF;">
                 <path d="M9.465 10H12a2 2 0 1 1 0 4H9.465c.34-.588.535-1.271.535-2s-.195-1.412-.535-2"/>
                 <path d="M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6m0 1a4 4 0 1 1 0-8 4 4 0 0 1 0 8m.535-10a4 4 0 0 1-.409-1H4a1 1 0 0 1 0-2h2.126q.138-.534.41-1H4a2 2 0 1 0 0 4z"/>
                 <path d="M14 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0"/>
@@ -30,7 +30,11 @@
 <!--        &#128712;-->
         <!-- Кнопка-переключатель с индикатором -->
         <div class="switch" onclick="toggleConnection()">
-            <button id="connectButton" title="выбор COM-port">&nbsp- COM -&nbsp</button>
+            <button title="выбор COM-port">
+                <svg id="connectButton" class="not-active" xmlns="http://www.w3.org/2000/svg" width="47" height="17" viewBox="0 3 16 10" style="background-color: #555555FF;">
+                    <path d="M1 6a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1zm11.5 1a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1m2 0a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1M1 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5M1.25 9h5.5a.25.25 0 0 1 0 .5h-5.5a.25.25 0 0 1 0-.5"/>
+                </svg>
+            </button>
             <div id="connectionLed" class="led_com" title="индикатор подключения"></div>
         </div>
         <div style="font-size: 7px; color: #008700">модель:<span id="model" style="color: #02fd02">-</span>&nbspS/N:<span id="sn">-</span></div>
