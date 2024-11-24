@@ -58,12 +58,25 @@ input[type=text] {
 /* Цвет кнопки по умолчанию */
 .status-off {
     color: #008700;
+    fill: #008700;
 }
 
 /* Цвет кнопки, когда она активна */
 .status-on {
     color: #02fd02;
+    fill: #02fd02;
 }
+.not-active {
+    color: #000000;
+    fill: #000000;
+}
+
+/* Цвет кнопки, когда она активна */
+.active {
+    color: #fddc02;
+    fill: #fddc02;
+}
+
 .adv-panel {
     background-color: #00192a;
     position: absolute;

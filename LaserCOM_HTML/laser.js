@@ -43,13 +43,15 @@ async function modelLaser() {
             const parts = value.split(";");
             model = parts[1].trim();
             document.getElementById("model").textContent = model;
-            document.getElementById("settingsButton").style.color = "yellow";
+            document.getElementById("settingsButton").classList.remove("not-active");
+            document.getElementById("settingsButton").classList.add("active");
             document.getElementById("connectButton").textContent = "Disconnect";
             document.getElementById("connectionLed").classList.add("on");
             console.log(model);
             document.getElementById("manual").href = "manual/" + model + ".pdf";
             document.getElementById("manual").target = "_blank";
-            document.getElementById("manualButton").style.color = "#02fd02";
+            document.getElementById("manualButton").classList.remove("not-active");
+            document.getElementById("manualButton").classList.add("active");
             document.getElementById("connectRS232").classList.remove("status-off");
             document.getElementById("connectRS232").classList.add("status-on");
         }

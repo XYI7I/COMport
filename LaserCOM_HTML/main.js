@@ -139,8 +139,10 @@ async function disconnectSerial() {
                     document.getElementById("sn").textContent = "-";
                     document.getElementById("manual").href = "";
                     document.getElementById("manual").target = "";
-                    document.getElementById("manualButton").style.color = "#008700";
-                    document.getElementById("settingsButton").style.color = "#7d8300";
+                    document.getElementById("settingsButton").classList.remove("active");
+                    document.getElementById("settingsButton").classList.add("not-active");
+                    document.getElementById("manualButton").classList.remove("active");
+                    document.getElementById("manualButton").classList.add("not-active");
                     // document.getElementById("serialResults").innerHTML = "";
                     document.getElementById("controlDB25").style.display = "none";
                     document.getElementById("connectionDB25").textContent = "";
