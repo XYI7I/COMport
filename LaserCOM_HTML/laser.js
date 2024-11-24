@@ -110,11 +110,11 @@ async function deviceStatus(){
                 document.getElementById("led9").classList.remove("on");
             }
             if (dev_st_bin[dev_st_bin.length - 7] === "1") {
-                document.getElementById("led13").classList.add("on");
+                document.getElementById("led12").classList.add("on");
                 isReady = true;
             }
             else {
-                document.getElementById("led13").classList.remove("on");
+                document.getElementById("led12").classList.remove("on");
                 isReady = false;
             }
         }
@@ -174,12 +174,12 @@ async function digitalIntStatus() {
             document.getElementById("mainLaserLed").classList.remove("on");
         }
         if (dig_int_bin[dig_int_bin.length - 26] === "1" && dig_int_bin[dig_int_bin.length - 27] === "1") {
-            document.getElementById("led13").classList.add("alarm");
-            document.getElementById("led13").title = "Laser is not ready for emission!";
+            document.getElementById("led12").classList.add("alarm");
+            document.getElementById("led12").title = "Laser is not ready for emission!";
         }
         else {
-            document.getElementById("led13").classList.remove("alarm");
-            document.getElementById("led13").title = "Laser is ready for emission!";
+            document.getElementById("led12").classList.remove("alarm");
+            document.getElementById("led12").title = "Laser is ready for emission!";
         }
     }
 }
@@ -282,31 +282,37 @@ async function frequencyLaser(){
 }
 
 async function pulseDurationLaser(){
-    await writeRS232('51');
-    const value = await readPortUntilCR();
-    const datalist = document.getElementById("pulse_durationList");
-    // Очищаем текущие значения
-    datalist.innerHTML = "";
-    // Разбиваем ответ на части
-    const values = value.split(";");
+    if (model === "YLPM-1-4x200-20-20") {
+        await writeRS232('51');
+        const value = await readPortUntilCR();
+        const datalist = document.getElementById("pulse_durationList");
+        // Очищаем текущие значения
+        datalist.innerHTML = "";
+        // Разбиваем ответ на части
+        const values = value.split(";");
 
-    // Добавляем новые значения
-    values.slice(1).forEach(value => {
-        console.log(value);
-        const option = document.createElement("option");
-        option.value = value.trim(); // Удаляем лишние пробелы
-        datalist.appendChild(option);
-    });
-    console.log(datalist);
-    try {
-        await writeRS232('48');
-        const puls_dur = await readPortUntilCR();
-        const puls_dur_values = puls_dur.split(";");
-        document.getElementById("pulse_duration").value = puls_dur_values[1].trim();
-        // document.getElementById("pulse_duration").textContent = puls_dur;
+        // Добавляем новые значения
+        values.slice(1).forEach(value => {
+            console.log(value);
+            const option = document.createElement("option");
+            option.value = value.trim(); // Удаляем лишние пробелы
+            datalist.appendChild(option);
+        });
+        console.log(datalist);
+        try {
+            await writeRS232('48');
+            const puls_dur = await readPortUntilCR();
+            const puls_dur_values = puls_dur.split(";");
+            document.getElementById("pulse_duration").value = puls_dur_values[1].trim();
+            // document.getElementById("pulse_duration").textContent = puls_dur;
+        }
+        catch (error) {
+            console.error("Error while parsing pulse duration ->", error);
+        }
     }
-    catch (error) {
-        console.error("Error while parsing pulse duration ->", error);
+    if (model === "YLPN-1-1x350-20") {
+        document.getElementById("pulse_duration_label").style.display = "none";
+        document.getElementById("pulse_duration").style.display = "none";
     }
 }
 

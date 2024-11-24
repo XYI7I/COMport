@@ -41,24 +41,14 @@
             <button id="mainLaser" class="status-off" style="width: 73px" title="Main Laser Switch">&#9211;</button>
             <div id="mainLaserLed" class="led_laser" title="Main Laser Led"></div>
         </div>
-        <br>
-        <br>
-        <!-- Ползунок для изменения напряжения -->
-<!--        <label for="powerSlider">Set Power:</label>-->
-<!--        <div class="slider-container">-->
-<!--            <input type="range" id="powerSlider" class="slider" min="0" max="100" step="1" value="10" oninput="updatePowValue(this.value)">-->
-<!--            <span id="powerValue">10</span>%-->
-<!--        </div>-->
-        <br>
-<!--        <label>Laser Status:</label><br><br>-->
+        <br><br><br>
         <div class="led-panel">
             <label for="powerSlider">Laser Status:</label>
             <div id="led8" class="led" title="Temperature alarm">&#127777;</div>
             <div id="led9" class="led" title="Power supply alarm">U</div>
             <div id="led10" class="led" title="Back reflection alarm">B</div>
             <div id="led11" class="led" title="System alarm">E</div>
-<!--            <div id="led12" class="led_attention" title="Laser is not ready for emission">!</div>-->
-            <div id="led13" class="led_ready" title="Ready">R</div>
+            <div id="led12" class="led_ready" title="Ready">R</div>
         </div>
         <br>
         <div id="controlDB25" style="display: none;">
@@ -104,8 +94,8 @@
                     <span id="frequencyValue"></span>kHz
                 </div>
                 <br>
-                Set Pulse Duration, [ns]:
-                <input type="text" id="pulse_duration" list="pulse_durationList" style="width: 10ch;" value="50" onclick="this.value = ''"
+                <label id="pulse_duration_label" for="pulse_duration" style="display: inline-block;">Set Pulse Duration, [ns]:</label>
+                <input type="text" id="pulse_duration" list="pulse_durationList" style="width: 10ch;  display: inline-block;" value="-" onclick="this.value = ''"
                        onchange="setPulseDurationValue(this.value)">
                 <datalist id="pulse_durationList">
                 </datalist>
