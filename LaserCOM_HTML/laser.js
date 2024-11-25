@@ -116,10 +116,12 @@ async function deviceStatus(){
             if (dev_st_bin[dev_st_bin.length - 7] === "1") {
                 document.getElementById("led12").classList.add("on");
                 isReady = true;
+                console.log(isReady);
             }
             else {
                 document.getElementById("led12").classList.remove("on");
                 isReady = false;
+                console.log(isReady);
             }
         }
         catch (error) {
@@ -153,18 +155,6 @@ async function digitalIntStatus() {
         }
         // console.log((parseInt(db25Power, 2) * 100 / 255).toFixed(1));
         document.getElementById("DB25PowerStr").textContent = (parseInt(db25Power, 2) * 100 / 255).toFixed(1);
-        if (dig_int_bin[dig_int_bin.length - 18] === "1") {
-            isDB25Connected = true;
-            document.getElementById("controlDB25").style.display = "block";
-            // document.getElementById("connectionDB25").style.color = ("yellow");
-            document.getElementById("connectionDB25").textContent = "[DB-25 Connected]";
-        }
-        else {
-            isDB25Connected = false;
-            document.getElementById("controlDB25").style.display = "none";
-            // document.getElementById("connectionDB25").style.color = ("yellow");
-            document.getElementById("connectionDB25").textContent = "[DB-25 Is Not Connected]";
-        }
         if (dig_int_bin[dig_int_bin.length - 20] === "1") {
             document.getElementById("guideLaserLed").classList.add("on");
         }
@@ -184,6 +174,19 @@ async function digitalIntStatus() {
         else {
             document.getElementById("led12").classList.remove("alarm");
             document.getElementById("led12").title = "Laser is ready for emission!";
+        }
+        if (dig_int_bin[dig_int_bin.length - 18] === "1") {
+            isDB25Connected = true;
+            document.getElementById("controlDB25").style.display = "block";
+            // document.getElementById("connectionDB25").style.color = ("yellow");
+            document.getElementById("connectionDB25").textContent = "[DB-25 Connected]";
+        }
+        else {
+            isDB25Connected = false;
+            document.getElementById("controlDB25").style.display = "none";
+            // document.getElementById("connectionDB25").style.color = ("yellow");
+            document.getElementById("connectionDB25").textContent = "[DB-25 Is Not Connected]";
+            document.getElementById("led12").classList.remove("alarm");
         }
     }
 }

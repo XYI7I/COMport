@@ -230,7 +230,7 @@ async function startContinuousRequest() {
 
 async function sendAndProcessCommand() {
     if (isConnected && writer) {
-        if (isDB25) {
+        if (isDB25 && isDB25Connected) {
             await digitalIntStatus();
             await frequencyLaser();
         }
