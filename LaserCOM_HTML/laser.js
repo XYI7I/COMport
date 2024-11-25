@@ -394,10 +394,10 @@ async function onMainLaser() {
     if(writer) {
         await writeRS232('30');
         await readPortUntilCR();
-        // if (model === "YLPN-1-1x350-20") {
-        //     await writeRS232('42');
-        //     await readPortUntilCR();
-        // }
+        if (model === "YLPN-1-1x350-20") {
+            await writeRS232('42');
+            await readPortUntilCR();
+        }
     }
 }
 
@@ -407,10 +407,10 @@ async function offMainLaser() {
     if(writer) {
         await writeRS232("31")
         await readPortUntilCR();
-        // if (model === "YLPN-1-1x350-20") {
-        //     await writeRS232('43');
-        //     await readPortUntilCR();
-        // }
+        if (model === "YLPN-1-1x350-20") {
+            await writeRS232('43');
+            await readPortUntilCR();
+        }
     }
 }
 
