@@ -57,8 +57,8 @@ input[type=text] {
 
 /* Цвет кнопки по умолчанию */
 .status-off {
-    color: #008700;
-    fill: #008700;
+    color: #00192a;
+    fill: #00192a;
 }
 
 /* Цвет кнопки, когда она активна */
@@ -121,15 +121,17 @@ input[type=text] {
     /*text-align: center;*/
     justify-content: center;
     align-items: center;
-    color: #828700;
+    color: #00192a;
 }
 .led_ready.on {
     background-color: #02fd02; /* По умолчанию - отключено (красный) */
-    color: #f5fd03;
+    /*color: #f5fd03;*/
+    color: #00192a;
 }
 .led_ready.alarm {
     background-color: red; /* По умолчанию - отключено (красный) */
-    color: #f5fd03;
+    /*color: #f5fd03;*/
+    color: red;
 }
 /*.led_attention {*/
 /*    width: 17px;*/
