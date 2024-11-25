@@ -235,6 +235,7 @@ async function sendAndProcessCommand() {
             await frequencyLaser();
         }
         await deviceStatus();
+        await new Promise(resolve => setTimeout(resolve, 100));
     }
 
     // await extendedStatus();
