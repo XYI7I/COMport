@@ -12,15 +12,23 @@
         <script src="password.js"></script>
     </head>
     <body>
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hdmi" viewBox="0 0 16 16">-->
+<!--&lt;!&ndash;        <path d="M2.5 7a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1z"/>&ndash;&gt;-->
+<!--        <path d="M1 5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h.293l.707.707a1 1 0 0 0 .707.293h10.586a1 1 0 0 0 .707-.293l.707-.707H15a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zm0 1h14v3h-.293a1 1 0 0 0-.707.293l-.707.707H2.707L2 9.293A1 1 0 0 0 1.293 9H1z"/>-->
+<!--    </svg>-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">-->
+<!--        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.0 1.0 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.0 1.0 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>-->
+<!--        <path d="M3 5.5a0.5 1.5 0 1 1 0-3 1.0 1.0 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.0 1.0 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>-->
+<!--    </svg>-->
         <div class="switch" onclick="toggleConnection()">
-            <button title="COM-port Connection" style="width: 73px;">
+            <button title="выбор COM-port" style="width: 73px;">
                 <svg id="connectButton" class="not-active" xmlns="http://www.w3.org/2000/svg" width="47" height="17" viewBox="0 3 16 10" style="background-color: #555555FF;">
                     <path d="M1 6a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1zm11.5 1a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1m2 0a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1M1 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5M1.25 9h5.5a.25.25 0 0 1 0 .5h-5.5a.25.25 0 0 1 0-.5"/>
                 </svg>
             </button>
-            <div id="connectionLed" class="led_com" title="Conection Led"></div>
+            <div id="connectionLed" class="led_com" title="индикатор подключения"></div>
         </div>
-        <button onclick="showPasswordModal()" style="width: 33px;" title="Advanced Laser Settings">
+        <button onclick="showPasswordModal()" style="width: 33px;" title="экспертные настройки">
             <svg id="settingsButton" class="not-active" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 2 17 10" style="background-color: #555555FF;">
                 <path d="M9.465 10H12a2 2 0 1 1 0 4H9.465c.34-.588.535-1.271.535-2s-.195-1.412-.535-2"/>
                 <path d="M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6m0 1a4 4 0 1 1 0-8 4 4 0 0 1 0 8m.535-10a4 4 0 0 1-.409-1H4a1 1 0 0 1 0-2h2.126q.138-.534.41-1H4a2 2 0 1 0 0 4z"/>
@@ -28,7 +36,7 @@
             </svg>
         </button>
         <a id ="manual">
-            <button style="width: 33px;" title="Laser Manual">
+            <button style="width: 33px;" title="руководство пользователя">
                 <svg id ="manualButton" class="n0t-active" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" style="background-color: #555555FF;">
                     <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
                     <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
@@ -37,39 +45,53 @@
         </a>
 <!--        &#128712;-->
         <!-- Кнопка-переключатель с индикатором -->
-        <div style="font-size: 7px; color: #008700">model:<span id="model" style="color: #02fd02">-</span>&nbspS/N:<span id="sn">-</span></div>
-        <span id="connectionDB25" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: yellow"></span><br><br>
+        <div style="font-size: 7px; color: #008700">модель:<span id="model" style="color: #02fd02">-</span>&nbspS/N:<span id="sn">-</span></div>
+        <span id="connectionDB25" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: yellow"></span>
+        <br><br>
         <div class="led-panel">
             <label for="powerSlider"></label>
-            <div id="led8" class="led" title="Temperature alarm">&#127777;</div>
-            <div id="led9" class="led" title="Power supply alarm">U</div>
-            <div id="led10" class="led" title="Back reflection alarm">B</div>
-            <div id="led11" class="led" title="System alarm">E</div>
-            <div id="led12" class="led_ready" title="Ready">R</div>
+            <div id="led8" class="led" title="предупреждение о высокой температуре">&#127777;</div>
+            <div id="led9" class="led" title="предупреждение о неисправности в источнике питания">U</div>
+            <div id="led10" class="led" title="предупреждение об отражении">B</div>
+            <div id="led11" class="led" title="предупреждение о системной ошибке">E</div>
+            <div id="led12" class="led_ready" title="готовность">R</div>
         </div>
         <br>
         <div class="switch" onclick="toggleRS232()">
-            <button id="connectRS232" class="status-off" style="width: 73px" title="Laser Control Interface - RS-232/DB-25">&#128435;</button>
+            <button style="width: 73px" title="переключатель интерфейсов - RS-232/DB-25">
+                <svg id="connectRS232" class="status-off" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" style="background-color: #555555FF">
+                    <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5M12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0m2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0M1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25"/>
+                </svg>
+            </button>
             <!--            &#128377; when DB-25 connected-->
-            <div id="connectionRS232Led" class="led_RS232" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: black" title="RS-232 Interface Led">RS-232</div>
-            &nbspLaser Control
-<!--            <div><span id="RS232"></span></div>-->
+            <div id="connectionRS232Led" class="led_RS232" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: black" title="индикатор подключения к лазеру по RS-232">RS-232</div>
+            &nbsp управление лазером
         </div>
         <br>
         <div class="switch" onclick="toggleGaideLaser()">
-            <button id="guideLaser" class="status-off" style="width: 73px" title="Guide Laser Switch">&#9211;</button>
-            <div id="guideLaserLed" class="led_laser" title="Guide Laser Led"></div>
-            &nbspLaser Guide
+            <button style="width: 73px" title="выключатель лазер-пилота">
+                <svg id="guideLaser" class="status-off" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" style="background-color: #555555FF">
+                    <path d="M7.5 1v7h1V1z"/>
+                    <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812"/>
+                </svg>
+            </button>
+            <div id="guideLaserLed" class="led_laser" title="индикатор лазер-пилота"></div>
+            &nbsp лазер пилот
         </div>
         <br>
         <div class="switch" onclick="toggleMainLaser()">
-            <button id="mainLaser" class="status-off" style="width: 73px" title="Main Laser Switch">&#9211;</button>
-            <div id="mainLaserLed" class="led_laser" title="Main Laser Led"></div>
-            &nbspLaser Main
+            <button style="width: 73px" title="выключатель излучения лазера">
+                <svg id="mainLaser" class="status-off"  xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" style="background-color: #555555FF">
+                    <path d="M7.5 1v7h1V1z"/>
+                    <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812"/>
+                </svg>
+            </button>
+            <div id="mainLaserLed" class="led_laser" title="индикатор излучения лазера"></div>
+            &nbsp лазер основной
         </div>
         <br><br><br>
         <div id="controlDB25" style="display: none;">
-            <label>DB25 Power:</label>&nbsp<span id="DB25PowerStr">--</span>&nbsp%;&nbspFrequency:&nbsp<span id="DB25FreqStr">--</span>&nbspKHz
+            <label>DB25 мощность:</label>&nbsp<span id="DB25PowerStr">--</span>&nbsp%;&nbspчастота:&nbsp<span id="DB25FreqStr">--</span>&nbspKHz
             <br>
             <br>
             <div class="led-panel">
@@ -95,29 +117,29 @@
         </div>
         <div id="advancedLaserMode" style="display: none;">
             <div class="adv-panel">
-                Advansed Laser Settings<button onclick="closeAdvancedLaserMode()" style="position: absolute; top: 10px; right: 10px;">&#9746;</button>
+                 ЭКСПЕРТНЫЕ УСТАНОВКИ<button onclick="closeAdvancedLaserMode()" style="position: absolute; top: 10px; right: 10px;">&#9746;</button>
                 <br><br>
-                <label for="powerSlider">Set Pulse Power [%]:</label>
+                <label for="powerSlider">мощность импульса [%]:</label>
                 <div class="slider-container">
                     <input type="range" id="powerSlider" class="slider" min="0" max="100" step="1" value="10" oninput="document.getElementById('powerValue').textContent = this.value"
                            onchange="updatePowValue(this.value)">
                     <span id="powerValue">10</span>%
                 </div>
                 <br>
-                <label for="frequencySlider">Set Frequency PRR [KHz]:</label>
+                <label for="frequencySlider">частота PRR [KHz]:</label>
                 <div class="slider-container">
                     <input type="range" id="frequencySlider" class="slider" min="50" max="1000" step="10" value="" oninput="document.getElementById('frequencyValue').textContent = this.value"
                            onchange="updateFreqValue(this.value)">
                     <span id="frequencyValue"></span>KHz
                 </div>
                 <br>
-                <label id="pulse_duration_label" for="pulse_duration" style="display: inline-block;">Set Pulse Duration, [ns]:</label>
+                <label id="pulse_duration_label" for="pulse_duration" style="display: inline-block;">длительность импульса, [ns]:</label>
                 <input type="text" id="pulse_duration" list="pulse_durationList" style="width: 10ch;  display: inline-block;" value="-" onclick="this.value = ''"
                        onchange="setPulseDurationValue(this.value)">
                 <datalist id="pulse_durationList">
                 </datalist>
                 <br><br>
-                Laser Comand Terminal:
+                командная строка:
                 <div style="width:360px"><hr color="green"></div>
                 <input type="text" id="lineToSend" style="width:273px" onkeydown="if (event.key === 'Enter') sendSerialLine();">
                 <button onclick="sendSerialLine()" style="width:73px">Send</button>

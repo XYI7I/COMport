@@ -91,7 +91,7 @@ input[type=text] {
 }
 .led-panel {
     display: flex;
-    gap: 10px;
+    gap: 7px;
 }
 .led {
     width: 17px;
@@ -111,10 +111,10 @@ input[type=text] {
     color: #f5fd03;
 }
 .led_ready {
-    width: 17px;
+    width: 57px;
     height: 17px;
     margin-left: 8px;
-    border-radius: 50%;
+    border-radius: 7%;
     background-color: #003000; /* По умолчанию - отключено (красный) */
     text-align: center;
     font-size: 13px;
