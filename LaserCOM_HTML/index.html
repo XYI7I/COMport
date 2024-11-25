@@ -38,27 +38,7 @@
 <!--        &#128712;-->
         <!-- Кнопка-переключатель с индикатором -->
         <div style="font-size: 7px; color: #008700">model:<span id="model" style="color: #02fd02">-</span>&nbspS/N:<span id="sn">-</span></div>
-        <span id="connectionDB25" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: yellow"></span><br>
-        <div class="switch" onclick="toggleRS232()">
-            Laser Control&nbsp<button id="connectRS232" class="status-off" style="width: 73px" title="Laser Control Interface - RS-232/DB-25">&#128435;</button>
-<!--            &#128377; when DB-25 connected-->
-            <div id="connectionRS232Led" class="led_RS232" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: black" title="RS-232 Interface Led">RS-232</div>
-<!--            <div><span id="RS232"></span></div>-->
-        </div>
-        <br>
-        <div class="switch" onclick="toggleGaideLaser()">
-            Laser Guide&nbsp&nbsp&nbsp
-<!--            &#9728; -->
-            <button id="guideLaser" class="status-off" style="width: 73px" title="Guide Laser Switch">&#9211;</button>
-            <div id="guideLaserLed" class="led_laser" title="Guide Laser Led"></div>
-        </div>
-        <br>
-        <div class="switch" onclick="toggleMainLaser()">
-            Laser Main&nbsp&nbsp&nbsp&nbsp
-            <button id="mainLaser" class="status-off" style="width: 73px" title="Main Laser Switch">&#9211;</button>
-            <div id="mainLaserLed" class="led_laser" title="Main Laser Led"></div>
-        </div>
-        <br><br><br>
+        <span id="connectionDB25" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: yellow"></span><br><br>
         <div class="led-panel">
             <label for="powerSlider"></label>
             <div id="led8" class="led" title="Temperature alarm">&#127777;</div>
@@ -68,6 +48,26 @@
             <div id="led12" class="led_ready" title="Ready">R</div>
         </div>
         <br>
+        <div class="switch" onclick="toggleRS232()">
+            <button id="connectRS232" class="status-off" style="width: 73px" title="Laser Control Interface - RS-232/DB-25">&#128435;</button>
+            <!--            &#128377; when DB-25 connected-->
+            <div id="connectionRS232Led" class="led_RS232" style="font-size: 7px; font-weight: bold; text-align: center;vertical-align: center; color: black" title="RS-232 Interface Led">RS-232</div>
+            &nbspLaser Control
+<!--            <div><span id="RS232"></span></div>-->
+        </div>
+        <br>
+        <div class="switch" onclick="toggleGaideLaser()">
+            <button id="guideLaser" class="status-off" style="width: 73px" title="Guide Laser Switch">&#9211;</button>
+            <div id="guideLaserLed" class="led_laser" title="Guide Laser Led"></div>
+            &nbspLaser Guide
+        </div>
+        <br>
+        <div class="switch" onclick="toggleMainLaser()">
+            <button id="mainLaser" class="status-off" style="width: 73px" title="Main Laser Switch">&#9211;</button>
+            <div id="mainLaserLed" class="led_laser" title="Main Laser Led"></div>
+            &nbspLaser Main
+        </div>
+        <br><br><br>
         <div id="controlDB25" style="display: none;">
             <label>DB25 Power:</label>&nbsp<span id="DB25PowerStr">--</span>&nbsp%;&nbspFrequency:&nbsp<span id="DB25FreqStr">--</span>&nbspKHz
             <br>
