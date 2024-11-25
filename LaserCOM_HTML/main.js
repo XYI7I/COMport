@@ -82,11 +82,11 @@ async function appendToTerminal(newStuff) {
 }
 
 async function disconnectSerial() {
-    console.log(isGuideLaserOn, isMainLaserOn, isDB25);
-    stopContinuousRequest();
     // console.log("stopContinuousRequest");
     if (!isGuideLaserOn && !isMainLaserOn) {
         if (isDB25) {
+            console.log(isGuideLaserOn, isMainLaserOn, isDB25);
+            stopContinuousRequest();
             try {
                 // Завершение записи
                 if (writer) {
