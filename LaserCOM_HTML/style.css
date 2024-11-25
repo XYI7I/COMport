@@ -73,8 +73,8 @@ input[type=text] {
 
 /* Цвет кнопки, когда она активна */
 .active {
-    color: #fddc02;
-    fill: #fddc02;
+    color: #fdc202;
+    fill: #fdc202;
 }
 
 .adv-panel {

@@ -382,9 +382,9 @@ async function toggleMainLaser() {
                 await onMainLaser();
             }
         }
-        await deviceStatus();
-        await extendedStatus();
     }
+    await deviceStatus();
+    await extendedStatus();
     await new Promise(resolve => setTimeout(resolve, 100));
 }
 

@@ -148,7 +148,7 @@ async function disconnectSerial() {
                     // document.getElementById("serialResults").innerHTML = "";
                     document.getElementById("controlDB25").style.display = "none";
                     document.getElementById("connectionDB25").textContent = "";
-                    document.getElementById("led13").classList.remove("on");
+                    document.getElementById("led12").classList.remove("on");
                 }
             } catch (e) {
                 alert("Error disconnecting: " + e);
