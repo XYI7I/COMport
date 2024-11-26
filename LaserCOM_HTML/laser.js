@@ -1,5 +1,5 @@
 let isGuideLaserOn = false, isMainLaserOn = false, isNotError = true, isDB25Connected, isReady;
-let freq_min, freq_max, oper_mode, oper_mode_bin, dig_int, dig_int_bin, dev_st, dev_st_bin, ext_st, ext_st_bin;
+let freq_min, freq_max, oper_mode, oper_mode_bin, dig_int, dig_int_bin, dev_st, dev_st_bin, ext_st, ext_st_bin, bitRS232, stRS232;
 let receivedData = '', response, db25Power = "?";
 
 async function readPortUntilCR() {
@@ -234,7 +234,22 @@ async function operatioinModStatus() {
             oper_mode = parseInt(parts[1].trim(), 10);
             oper_mode_bin = oper_mode.toString(2);
             console.log(oper_mode, oper_mode_bin[oper_mode_bin.length - 1])
-            if (oper_mode_bin[oper_mode_bin.length - 2] === "1") {
+            if(model === "YLPM-1-4x200-20-20") {
+                bitRS232 = 2;
+                stRS232 = "1"
+                console.log(bitRS232);
+            }
+            else{
+                if(model === "YLPN-1-1x350-20"){
+                    bitRS232 = 1;
+                    stRS232 = "0"
+                    console.log(bitRS232);
+                }
+                else{
+                    alert ('Model is not supported!');
+                }
+            }
+            if (oper_mode_bin[oper_mode_bin.length - bitRS232] === stRS232) {
                 document.getElementById("connectionRS232Led").classList.add("on");
                 // document.getElementById("connectRS232").textContent = ;
                 isDB25 = false;

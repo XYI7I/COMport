@@ -1,5 +1,5 @@
 let port, textEncoder, textDecoder, writableStreamClosed, writer, readableStreamClosed, reader;
-let isConnected = false, isRS232 = false, isDB25 = true;
+let isConnected = false, isRS232 = false, isDB25 = true, isInitialized = false;
 let intervalId, orderCommand = true, dataToSend, serialResultsDiv;
 
 let RS232History = [];
@@ -43,6 +43,7 @@ async function initializeLaser() {
     await frequencyRangeLaser();
     await pulseDurationLaser();
     await startContinuousRequest();
+    isInitialized = true;
 }
 
 async function sendSerialLine() {
@@ -205,12 +206,14 @@ async function onRS232() {
 async function offRS232() {
     if(isConnected){
         document.getElementById("connectionRS232Led").classList.remove("on");
+        console.log(model);
         if(model === "YLPM-1-4x200-20-20"){
             await writeRS232("24;1073");
             isRS232 = await readPortUntilCR();
         }
         else{
             if(model === "YLPN-1-1x350-20"){
+                console.log(model);
                 await writeRS232("24;9139421");
                 isRS232 = await readPortUntilCR();
             }
